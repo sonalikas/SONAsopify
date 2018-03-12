@@ -1,61 +1,63 @@
-
       <!--Footer-->
-      <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
+    <div class="footer text-center" style="background-color:#334056;">
+       <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+   <p style="color:white;">Back to top</p>
+   
+  </div>
+   
+    
+      <footer class="page-footer font-small stylish-color-dark pt-4 mt-4" style="background-color:#212938; ">
       
           <!--Footer Links-->
-          <div class="container text-center text-md-left">
+          <div class="container text-center text-md-left" >
               <div class="row">
       
                   <!--First column-->
                   <div class="col-md-4">
-                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Footer Content</h5>
-                      <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                          amet, consectetur adipisicing elit.</p>
+                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold" style="color:white;font-family:Forte;
+font-size:30px;">SONAsopify</h5>
+                      <!--  <p style="color:white;">stay happy...<br>keep smile...<br>thanks for visit..  </p>-->
+  			<img src="${e}resources/images/lgo.png"/>
+
                   </div>
                   <!--/.First column-->
       
-                  <hr class="clearfix w-100 d-md-none">
-      
+               
                   <!--Second column-->
                   <div class="col-md-2 mx-auto">
-                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
-                      <ul class="list-unstyled">
+                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold" style="color:white;">Links</h5>
+                      <ul class="list-unstyled" >
                           <li><a href="#!">Link 1</a></li>
                           <li><a href="#!">Link 2</a></li>
                           <li><a href="#!">Link 3</a></li>
-                          <li><a href="#!">Link 4</a></li>
-                      </ul>
+                         </ul>
                   </div>
                   <!--/.Second column-->
       
-                  <hr class="clearfix w-100 d-md-none">
-      
+                
                   <!--Third column-->
                   <div class="col-md-2 mx-auto">
-                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold" style="color:white;">Links</h5>
                       <ul class="list-unstyled">
                           <li><a href="#!">Link 1</a></li>
                           <li><a href="#!">Link 2</a></li>
                           <li><a href="#!">Link 3</a></li>
-                          <li><a href="#!">Link 4</a></li>
-                      </ul>
+                           </ul>
                   </div>
                   <!--/.Third column-->
       
-                  <hr class="clearfix w-100 d-md-none">
-      
-                  <!--Fourth column-->
-                  <div class="col-md-2 mx-auto">
-                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold ">Links</h5>
+       <div class="col-md-2 mx-auto">
+                      <h5 class="text-uppercase mb-4 mt-3 font-weight-bold"style="color:white;">Links</h5>
                       <ul class="list-unstyled">
                           <li><a href="#!">Link 1</a></li>
                           <li><a href="#!">Link 2</a></li>
                           <li><a href="#!">Link 3</a></li>
-                          <li><a href="#!">Link 4</a></li>
-                      </ul>
+                          </ul>
                   </div>
-                  <!--/.Fourth column-->
-              </div>
+                 
+                </div>
           </div>
           <!--/.Footer Links-->
       
@@ -64,7 +66,7 @@
           <div class="text-center py-3">
               <ul class="list-unstyled list-inline mb-0">
                   <li class="list-inline-item">
-                      <h5 class="mb-1">Register for free</h5>
+                      <h5 class="mb-1"style="color:white;">Register for free</h5>
                   </li>
                   <li class="list-inline-item"><a href="registerd" class="btn btn-danger btn-rounded">Sign up!</a></li>
               </ul>
@@ -87,7 +89,7 @@
           <!--Copyright-->
           <div class="footer-copyright py-3 text-center">
               <div class="container-fluid">
-                  © 2017 Copyright: <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> MDBootstrap.com </a>
+                <h5 style="color:white;"> Copyright & Copy:2018.All Rights Reserved <br> Design & amp : Devloped By Sonalika Shrivastava </h5>
       
               </div>
           </div>

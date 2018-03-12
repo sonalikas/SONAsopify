@@ -33,11 +33,28 @@ box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.75);
    background-color: #1a344c;
    color: white;
    text-align: center;
+}/**
+.thumbnail{
+	position:relative;
+	top:20px;
+	right:250px;
+	width:200px;
+	height:10px;
+	margin-right:150px;
+	margin-left:200px;
+	
+	
 }
+.details  {
+
+	margin-left:200px;
+}**/
+
  .navbar-brand  {
 
 font-family:Forte;
 font-size:30px;
+
 }
 .form-group{
    color:black;
@@ -52,8 +69,7 @@ font-size:30px;
 }
 .btn-lg{
 margin-left: 150px;
-
-               margin-top:100px;
+		margin-top:100px;
  margin-bottom:100px;
   }
   .continer{
@@ -118,10 +134,14 @@ margin-left: 150px;
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
       <c:if test='<%=session.getAttribute("loggedin")!=null%>'>
+      <li><a href="${e}cart">Cart</a></li>
+       <li><a href="${e}orders">Orders</a></li>
                    <li><a>Welcome ${user.username}</a></li>
     <li><a href="${e}perform_logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
       </c:if></ul>
 
     </div>
+    
+   
    
 </nav>

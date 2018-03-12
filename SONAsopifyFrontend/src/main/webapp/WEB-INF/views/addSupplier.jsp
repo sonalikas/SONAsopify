@@ -8,7 +8,7 @@
 <form action="saveSupplier" method="post" class="form-container">
 <h1><span style="color:black; font-family:Forte;"><b>Add Supplier</b></span></h1>
   <div class="form-group">
-    <label for="s_name"><span style="color:#fff">Enter Name</span> </label>
+    <label for="s_name"><span style="color:black;">Enter Name</span> </label>
     <input type="text" class="form-control" id="s_name" placeholder="Enter Name" name="s_name">
   </div>
   <button type="submit" class="btn btn-success btn-block">login</button>

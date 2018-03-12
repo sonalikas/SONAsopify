@@ -6,9 +6,16 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 	
 <security:http auto-config="true" use-expressions="true">
-	 	<!-- <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
-	 	 -->
-		
+<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+<security:intercept-url pattern="/addCategory" access="hasRole('ROLE_ADMIN')"/>	
+<security:intercept-url pattern="/updateCategory" access="hasRole('ROLE_ADMIN')"/>		
+<security:intercept-url pattern="/addProduct" access="hasRole('ROLE_ADMIN')"/>		
+	<security:intercept-url pattern="/updateProduct" access="hasRole('ROLE_ADMIN')"/>		
+<security:intercept-url pattern="/addSupplier" access="hasRole('ROLE_ADMIN')"/>		
+	<security:intercept-url pattern="/updateSupplier" access="hasRole('ROLE_ADMIN')"/>		
+	
+		<security:intercept-url pattern="/addToCart" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>		
+
 		<security:access-denied-handler error-page="/403Error" />
 		<security:form-login 
 		    login-page="/login" 

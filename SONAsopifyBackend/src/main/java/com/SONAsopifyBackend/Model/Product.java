@@ -76,3 +76,5 @@ public class Product {
 		@Transient
 		private MultipartFile image;
 }
+
+ 

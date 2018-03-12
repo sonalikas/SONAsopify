@@ -10,11 +10,11 @@
 <h1><span style="color:;"><b>LOGIN HERE</b></span></h1>
   <div class="form-group">
     <label for="email"><span style="color:black;">Username</span> </label>
-    <input type="text" class="form-control" id="email" placeholder="Enter username" name="username">
+    <input type="text" class="form-control" id="email" placeholder="Enter username" name="username"  required="">
   </div>
     <div class="form-group">
     <label for="password"><span style="color:black;">Password</span> </label>
-    <input type="pass" class="form-control" id="pass" placeholder="password" name="password">
+    <input type="password" class="form-control" id="pass" placeholder="password" name="password" patter=".{6,}" required="">
   </div>
  
   <button type="submit" class="btn btn-success btn-block">login</button>

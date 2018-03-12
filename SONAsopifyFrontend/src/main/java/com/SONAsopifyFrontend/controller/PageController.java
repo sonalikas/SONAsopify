@@ -33,6 +33,10 @@ ProductDAO productDAO;
 	public String index(){
 		return "index";
 	}
+	@RequestMapping("/403Error")
+	public String error(){
+		return "403";
+	}
 	
 	@RequestMapping("/registerd")
 	public String registerd(){
