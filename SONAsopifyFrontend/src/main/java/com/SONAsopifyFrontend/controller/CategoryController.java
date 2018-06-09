@@ -44,8 +44,10 @@ public class CategoryController {
 		}
 		@RequestMapping(value="/deleteCategory/{cid}")
 		public String deleteCategory(@PathVariable int cid){
-			Category category=categoryDAO.getCategoryById(cid);
-			categoryDAO.deleteCategory(category);
+			try{Category category=categoryDAO.getCategoryById(cid);
+			categoryDAO.deleteCategory(category);}
+			catch(Exception e){}
+			
 			return "redirect:/viewCategory";
 		}	
 		

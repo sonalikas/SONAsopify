@@ -12,10 +12,48 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<!-- <script>
+function showResult(str) {
+  if (str.length==0) { 
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>-->
+
+
+
 </head>
 <style>
 #try{
 opacity:0.1;
+}
+.con{
+margin-top:10px;
+padding:50px 60px;
+
+-webkit-box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.75);
+
 }
 .form-container{
 margin-top:140px;
@@ -95,7 +133,7 @@ margin-left: 150px;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> SONAsopify </a>
+      <a class="navbar-brand" href="${e}"> SONAsopify </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -110,30 +148,33 @@ margin-left: 150px;
 		  </c:forEach>
          </ul>
         </li></c:if>
-        <li><a href="#">Today's Deals</a></li>
-     <li><a href="#">Customer Service</a></li>
+        <li><a href="${e}aboutUs">About Us</a></li>
+        
+     <li><a href="${e}customerService">Customer Service</a></li>
        </ul>
-       <form class="navbar-form navbar-left" action="/action_page.php">
+      <!--  <form class="navbar-form navbar-left" action="/action_page.php">
        <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search">
+    <input type="text" class="form-control" placeholder="Search" size="30" onkeyup="showResult(this.value)">
     <div class="input-group-btn">
       <button class="btn btn-default" type="submit">
         <i class="glyphicon glyphicon-search"></i>
       </button>
+      <div id="livesearch"></div>
     </div>
   </div>
-</form>
+</form> -->
   
       <ul class="nav navbar-nav">
-      <li><a href="admin">Admin</a></li>
-      </ul>
       <sec:authentication var="user" property="principal"/>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
        <c:if test='<%=session.getAttribute("loggedin")==null%>'>
         <li><a href="registerd"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
       <c:if test='<%=session.getAttribute("loggedin")!=null%>'>
+      <c:if test="${user.authorities=='[ROLE_ADMIN]'}">
+      <li><a href="admin">Admin</a></li></c:if>
       <li><a href="${e}cart">Cart</a></li>
        <li><a href="${e}orders">Orders</a></li>
                    <li><a>Welcome ${user.username}</a></li>

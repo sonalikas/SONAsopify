@@ -47,8 +47,11 @@ import com.SONAsopifyBackend.Model.Supplier;
 		}
 		@RequestMapping(value="/deleteSupplier/{sid}")
 		public String deleteCategory(@PathVariable int sid){
-			Supplier supplier=supplierDAO.getSupplierById(sid);
-			supplierDAO.deleteSupplier(supplier);
+			try{Supplier supplier=supplierDAO.getSupplierById(sid);
+			
+			supplierDAO.deleteSupplier(supplier);}
+			catch(Exception e){}
+			
 			return "redirect:/viewSupplier";
 		}	
 		

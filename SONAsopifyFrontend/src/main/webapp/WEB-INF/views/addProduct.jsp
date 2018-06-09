@@ -1,8 +1,8 @@
 <%@ include file="header.jsp" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<form:form modelAttribute="product" method="post" action="${e}saveProduct" enctype="multipart/form-data">
+<form:form modelAttribute="product" method="post" action="${e}saveProduct" enctype="multipart/form-data"  >
 
-<div class="container">
+<div class="container" style="   background-image:url('resources/images/register.png  ')">
 <table class="table table-dark table-hover">
    
 <tr>
@@ -37,7 +37,9 @@
 <form:input path="image" type="file"/><br/></td>
 </tr>
 <tr>
+<th>
 <button type="submit" class="btn btn-success">Success</button>
+</th>
 </tr>
 <!-- <input type="submit"/> -->
 </form:form>

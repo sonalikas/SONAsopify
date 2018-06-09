@@ -2,12 +2,13 @@
 
 <div class="container-fliud" style="background: url('resources/images/register.png'); ">
 <form class="form-horizontal" action="adduser" method="post" style="margin-top:0%;margin-bottom:0%;">
-<h1 style=" text-align:center; font-family:Forte; color:black ;"><b> Registration form</b></h1>
+<h1 style=" text-align:center; font-family:Forte; color:black ;"><b> Registration form</b>${msg }</h1>
 <div class="form-group">
     <label class="control-label col-sm-2" for="pwd" >Username:</label>
     <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="pwd" placeholder="Enter username" name="username">
+      <input type="text" class="form-control" id="pwd" placeholder="Enter username" name="username" required="">
     </div>
+   
   </div>
   
   <div class="form-group">
@@ -26,7 +27,7 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="pwd">Contact number:</label>
     <div class="col-sm-10"> 
-      <input type="tel" class="form-control" id="pwd" placeholder="contact no." name="tel" patter="[6-9]{1}[0-9]{9}" title="please enter a vaolid number">
+      <input type="tel" class="form-control" id="pwd" placeholder="contact no." name="tel" pattern="[6-9]{1}[0-9]{9}" maxlength="10" title="please enter a valid number" required="" >
     </div>
   </div>
 

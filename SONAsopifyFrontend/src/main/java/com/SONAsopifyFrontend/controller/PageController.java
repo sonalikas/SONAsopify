@@ -1,4 +1,4 @@
- 	package com.SONAsopifyFrontend.controller;
+package com.SONAsopifyFrontend.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,7 +40,9 @@ ProductDAO productDAO;
 	}
 	
 	@RequestMapping("/registerd")
-	public String registerd(){
+	public String registerd(@RequestParam(required=false) Integer id,Model m){
+		if(id!=null&&id==1)
+			m.addAttribute("msg","Already Registered");
 		return "registerd";
 	}
 	@RequestMapping("/header")
@@ -61,6 +64,16 @@ ProductDAO productDAO;
 	public String admin(){
 		return "admin";
 	}
+
+	@RequestMapping("/customerService")
+	public String customerService(){
+		return "customerService";
+	}
+	
+	@RequestMapping("/aboutUs")
+	public String aboutUs(){
+		return "aboutUs";
+	}
 	
 	@RequestMapping(value="/adduser",method=RequestMethod.POST)
 	public String adduser(@RequestParam Map<String,String>data){
@@ -73,8 +86,12 @@ ProductDAO productDAO;
 		userDetails.setName(data.get("name"));
 		userDetails.setEnabled(true);
 		userDetails.setPassword(data.get("pass"));
-		userDetailsDAO.addUserDetails(userDetails);
-		return "redirect:login";
+		try{
+		userDetailsDAO.addUserDetails(userDetails);}
+		catch(Exception e){
+			return "redirect:/registerd?id=1";		
+		}
+		return "redirect:/login";
 	}
 	@RequestMapping("/viewProductByCategory/{c_id}")
 	public ModelAndView updateProduct(@PathVariable int c_id){

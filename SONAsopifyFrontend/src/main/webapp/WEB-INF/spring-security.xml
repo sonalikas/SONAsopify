@@ -1,43 +1,80 @@
 <beans:beans xmlns="http://www.springframework.org/schema/security"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
 	xmlns:beans="http://www.springframework.org/schema/beans"
-xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
-	
-<security:http auto-config="true" use-expressions="true">
-<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-<security:intercept-url pattern="/addCategory" access="hasRole('ROLE_ADMIN')"/>	
-<security:intercept-url pattern="/updateCategory" access="hasRole('ROLE_ADMIN')"/>		
-<security:intercept-url pattern="/addProduct" access="hasRole('ROLE_ADMIN')"/>		
-	<security:intercept-url pattern="/updateProduct" access="hasRole('ROLE_ADMIN')"/>		
-<security:intercept-url pattern="/addSupplier" access="hasRole('ROLE_ADMIN')"/>		
-	<security:intercept-url pattern="/updateSupplier" access="hasRole('ROLE_ADMIN')"/>		
-	
-		<security:intercept-url pattern="/addToCart" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>		
 
-		<security:access-denied-handler error-page="/403Error" />
-		<security:form-login 
-		    login-page="/login" 
-		    default-target-url="/" 
-		    login-processing-url="/perform_login"
-		    authentication-success-forward-url="/login_success"
-			authentication-failure-url="/login?id=1" 
-			username-parameter="username"
-			password-parameter="password"/>
-		<security:logout logout-url="/perform_logout" 
-		invalidate-session="true"
-		logout-success-url="/login?id=2"  />
-		<security:csrf disabled="true"/>
+	<security:http auto-config="true" use-expressions="true">
+		<security:intercept-url pattern="/admin"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/addCategory"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/saveCategory"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/updateCategoryById/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/deleteCategory/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/deleteSupplier/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/deleteProduct/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/saveCategory/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/saveProduct/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/saveSupplier/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/viewCategory"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/updateCategory"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/addProduct"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/updateProduct/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/viewProduct"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/addSupplier"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/updateSupplier"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/viewSupplier"
+			access="hasRole('ROLE_ADMIN')" />
+
+		<security:intercept-url pattern="/cart"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/addToCart/*"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/checkout"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/thanks"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/viewProductByCategory"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/viewProductDetails"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+		<security:intercept-url pattern="/changeCartItam/*/*"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+
+		<security:access-denied-handler
+			error-page="/403Error" />
+		<security:form-login login-page="/login"
+			default-target-url="/" login-processing-url="/perform_login"
+			authentication-success-forward-url="/login_success"
+			authentication-failure-url="/login?id=1" username-parameter="username"
+			password-parameter="password" />
+		<security:logout logout-url="/perform_logout"
+			invalidate-session="true" logout-success-url="/login?id=2" />
+		<security:csrf disabled="true" />
 	</security:http>
-	
+
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query=
-					"select username,password,enabled from UserDetails where username=?"
-				authorities-by-username-query=
-					"select username, role from UserDetails where username =?"/>
+			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				users-by-username-query="select username,password,enabled from UserDetails where username=?"
+				authorities-by-username-query="select username, role from UserDetails where username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 </beans:beans>

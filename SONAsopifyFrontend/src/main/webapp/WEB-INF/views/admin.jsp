@@ -1,6 +1,8 @@
 <%@include file="header.jsp" %>
 <div class="continer">
-
+		<h1 style="text-align: center; font-family: Forte; color: black;">
+			<b> Admin Work</b>
+	
 	<div class="row">
 	<div class="col-sm-4">
 	<a href="addCategory" class=" btn btn-lg btn-info">Add Category</a>

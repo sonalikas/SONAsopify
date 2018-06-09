@@ -46,7 +46,7 @@ public class OrderController {
 		shippingAddress.setName(data.get("name"));
 		shippingAddress.setPincode(Integer.parseInt(data.get("pincode")));
 		shippingAddress.setMobile(Long.parseLong(data.get("mobile")));
-		int orderID=(int)Math.random()*10000000;
+		int orderID=Integer.parseInt(""+Math.round(Math.random()*10000000));
 		ordersDAO.insertAddress(shippingAddress);
 		Orders orders=new Orders();
 		orders.setPayMode(data.get("payMode"));

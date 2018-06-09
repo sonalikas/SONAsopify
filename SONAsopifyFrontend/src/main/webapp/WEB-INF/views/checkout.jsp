@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="mobile" pattern="[6-9]{1}[0-9]{9}" title="please enter a vaolid number">Mobile:</label>
+			<label class="control-label col-sm-2" for="mobile" pattern="[6-9]{1}[0-9]{9}" maxlength="10" title="please enter a valid number" required="">Mobile:</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="mobile"
 					placeholder="Enter mobile no." name="mobile">
@@ -53,16 +53,20 @@
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="paymode" required="">Payment Mode:</label>
 			<div class="col-sm-10">
-				<input type="radio" class="form-control" value="COD" name="payMode"> COD
-				<input type="radio" class="form-control" value="Credit Card" name="payMode"> Credit Card
-				<input type="radio" class="form-control" value="Net Banking" name="payMode"> Net Banking
-			</div>
+				
+					<div class="form-control">
+						<input required="" type="radio" value="COD" name="payMode"> COD <input
+							type="radio" value="Credit Card" name="payMode"> Credit
+						Card <input type="radio" value="Net Banking" name="payMode">
+						Net Banking
+					</div>
+	</div>
 		</div>
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 				<button type="submit" class="btn btn-success">Place Order</button>
-			</div>
+			</div>   
 		</div>
 	</form>
 </div>
@@ -71,3 +75,4 @@
 </html>
 <%@include file="footer.jsp"%>
 
+ 
