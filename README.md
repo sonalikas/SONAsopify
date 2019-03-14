@@ -9,4 +9,4 @@ A Java editor for SONAsopify.java will open. ...<br>
 
 Click the "Run" button in the toolbar (looks like a little man running).<br>
 
-You will be prompted to create a Launch configuration.
+You will be prompted to create a Launch configuration with server.
